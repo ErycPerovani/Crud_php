@@ -5,7 +5,11 @@
         $query = $conexao->prepare("SELECT * FROM usuario WHERE email = ? AND senha = ?");
         $query->execute(array($_POST["email"], $_POST["senha"]));
 
-        echo $query->rowCount();
+        if($query->rowCount()){
+            $usuario = $query->fetchAll(PDO::FETCH_ASSOC)[0];
+            
+            print_r($usuario);
+        };
     }else{
         echo('ERROR!');
     }
