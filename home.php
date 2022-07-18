@@ -42,7 +42,7 @@
                     </tbody>
                 </table>
             <?php endif; ?>
-        <a href="crud/create.php">Cadastrar produto</a>
+        <a href="cadastramento.html">Cadastrar produto</a>
         <br/>
         <a href="back/logout.php">Sair</a>
 
