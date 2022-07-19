@@ -5,46 +5,43 @@
         require ("back/conexao.php");
 
         $user_id = $_SESSION["online"][0];
-        $email = $_SESSION["online"][1];
+        $adm = $_SESSION["online"][1];
     }else{
         header('location: ./index.html');
     }
 ?>
-
 <html lang="pt-br">
     <head>
         <title>HOME</title>
     </head>
     <body>
-        <?php if($user_id): ?>
+        <?php if($adm): ?>
                 <table>
                     <thead>
                         <tr>
-                            <td>Produto</td>
-                            <td>Valor</td>
+                            <td>Email: </td>
+                            <td>Nome: </td>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                            $query = $conexao->prepare("SELECT * FROM produtos");
+                            $query = $conexao->prepare("SELECT * FROM usuario");
                             $query->execute();
 
-                            $prod = $query->fetchAll(PDO::FETCH_ASSOC);
+                            $user = $query->fetchAll(PDO::FETCH_ASSOC);
 
-                        for($i=0; $i < sizeof($prod); $i++):
-                            $itensAtuais = $prod[$i];
+                        for($i=0; $i < sizeof($user); $i++):
+                            $usuariosTotais = $user[$i];
                         ?>
                         <tr>
-                            <td> <?php echo $itensAtuais["produto"];?> </td>
-                            <td> R$ <?php echo $itensAtuais["valor"];?> </td>
+                            <td> <?php echo $usuariosTotais["email"];?> </td>
+                            <td><?php echo $usuariosTotais["usuario"];?> </td>
                         </tr>
                         <?php endfor; ?>
+                        <a href="crud/form.php">Cadastrar produto</a>
                     </tbody>
                 </table>
             <?php endif; ?>
-        <a href="crud/create.php">Cadastrar produto</a>
-        <br/>
         <a href="back/logout.php">Sair</a>
-
     </body>
 </html>
