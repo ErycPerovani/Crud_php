@@ -6,5 +6,6 @@
 
     while($registros = $exec->fetch()){
         echo $registros["produto"]. " - ". $registros["valor"]."<br/>";
+        echo "<hr/>";
     }
 ?>
