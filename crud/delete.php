@@ -1,10 +1,20 @@
 <?php
-    require("../back/conexao.php");
- 
-    $id = $_GET["id"];
+    session_start();
+    
+    if(isset($_SESSION["online"]) && is_array($_SESSION["online"])){
+        require ("../back/conexao.php");
+    
+        $user_id = $_SESSION["online"][0];
+        $adm = $_SESSION["online"][1];
 
-    $sql = "DELETE FROM produtos WHERE id=\"$id\"";
-    $exec = $conexao->query($sql);
-
-    header("home.php");
+        $id = $_GET["id"];
+    
+        $sql = "DELETE FROM produtos WHERE id=\"$id\"";
+        $exec = $conexao->query($sql);
+    
+        header("home.php");
+    }else{
+        header('location: ./index.html');
+    }
+   
 ?>
