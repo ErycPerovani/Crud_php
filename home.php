@@ -39,6 +39,8 @@
                         </tr>
                         <?php endfor; ?>
                         <a href="crud/form.php">Cadastrar produto</a>
+                        <br/>
+                        <a href="crud/editProd.php">Editar Produtos cadastrados</a>
                     </tbody>
                 </table>
             <?php endif; ?>
