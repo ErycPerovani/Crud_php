@@ -42,6 +42,9 @@
                     </tbody>
                 </table>
             <?php endif; ?>
+        <a href="crud/reading.php">Produtos</a>
+        <br/>
         <a href="back/logout.php">Sair</a>
+
     </body>
 </html>
