@@ -17,6 +17,7 @@ $("#bt_prod").on("click",function(){
     })
 })
 $("#bt_atualizar").on("click", function(){
+    var input_id = $("#id").val();
     var input_prod = $("#prod").val();
     var input_valor = $("#valor").val();
 
@@ -24,6 +25,7 @@ $("#bt_atualizar").on("click", function(){
         url: "../crud/update.php",
         type: "post",
         data:{
+            id: input_id,
             produto: input_prod,
             valor: input_valor
         },
