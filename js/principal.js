@@ -34,5 +34,6 @@ $("#bt_atualizar").on("click", function(){
         }
     }).done(function(r){
         $("#resposta").html("Atualizado com sucesso!");
+        window.location="reading.php";
     })
 })

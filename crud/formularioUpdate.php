@@ -21,6 +21,7 @@
         <input type="hidden" id="id" name="id" value="<?php echo $fecth['id']?>">
         <br/>
         <input type="button" id="bt_atualizar" value="Atualizar">
+        <a href="editProd.php">Voltar</a>
     </form>
     <div id="resposta"></div>
 
